@@ -12,10 +12,14 @@ class LoginApp extends StatefulWidget {
 class LoginAppState extends State<LoginApp> {
   @override
   // TODO: implement widget
-  void _Dang_Nhap() {}
+
   bool _iconshow = true;
-  var _sai_TDN='So dien thoai khong chinh xac';
-  var _sai_MK='Mat khau khong dung';
+  bool _nhapsai_TDN = false;
+  bool _nhapsai_MK = false;
+  TextEditingController _txtTen_Dang_Nhap = new TextEditingController();
+  TextEditingController _txtMat_Khau = new TextEditingController();
+  var _sai_TDN = 'So dien thoai khong chinh xac';
+  var _sai_MK = 'Mat khau khong dung';
 
   Widget build(BuildContext context) {
     void _hien_thi_pass() {
@@ -42,18 +46,19 @@ class LoginAppState extends State<LoginApp> {
     );
     final _txt_Ten_Dang_Nhap = new TextField(
       decoration: InputDecoration(
-          hintText: 'Nhập số điện thoạii',
-          errorText: _sai_TDN,
+          hintText: 'Nhập số điện thoại',
+          // errorText: _nhapsai_TDN ? _sai_TDN : null,
           hintStyle: TextStyle(fontSize: 20),
           prefixIcon: Icon(Icons.phone),
           border: InputBorder.none),
       keyboardType: TextInputType.number,
+      controller: _txtTen_Dang_Nhap,
     );
 
-    final _txt_Ten_Mat_Khau = new TextField(
+    final _txt_Mat_Khau = new TextField(
       decoration: InputDecoration(
           hintText: 'Nhập mật khẩu',
-          errorText: _sai_MK,
+          // errorText: _nhapsai_MK ? _sai_MK : null,
           hintStyle: TextStyle(fontSize: 20),
           prefixIcon: Icon(Icons.dialpad),
           border: InputBorder.none,
@@ -61,6 +66,7 @@ class LoginAppState extends State<LoginApp> {
               icon: Icon(Icons.remove_red_eye), onPressed: _hien_thi_pass)),
       keyboardType: TextInputType.text,
       obscureText: _iconshow,
+      controller: _txtMat_Khau,
     );
     final _btn_Dang_Nhap = new RaisedButton(
         onPressed: _Dang_Nhap,
@@ -78,9 +84,9 @@ class LoginAppState extends State<LoginApp> {
         title: Text(
           'Đăng nhập',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 22),
+          style: TextStyle(fontSize: 22)
         ),
-        centerTitle: true,
+        centerTitle: true
       ),
       body: Container(
         child: Column(
@@ -109,7 +115,7 @@ class LoginAppState extends State<LoginApp> {
                   color: Colors.black12,
                 ),
                 height: 50,
-                child: _txt_Ten_Mat_Khau),
+                child: _txt_Mat_Khau),
             Container(
               margin: EdgeInsets.only(left: 12, right: 12, top: 30),
               child: SizedBox(
@@ -130,13 +136,16 @@ class LoginAppState extends State<LoginApp> {
             ),
             Container(
               margin: EdgeInsets.only(top: 35),
-
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('Bạn chưa có tài khoản?',style: TextStyle(fontSize: 17)),
-                  GestureDetector(child: Text(" Đăng ký",style: TextStyle(fontSize: 20,
-                      fontWeight: FontWeight.bold),))
+                  Text('Bạn chưa có tài khoản?',
+                      style: TextStyle(fontSize: 17)),
+                  GestureDetector(
+                      child: Text(
+                    " Đăng ký",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ))
                 ],
               ),
             )
@@ -144,5 +153,39 @@ class LoginAppState extends State<LoginApp> {
         ),
       ),
     );
+  }
+
+  void _Dang_Nhap() {
+    if (_txtTen_Dang_Nhap.text.length < 9 || _txtTen_Dang_Nhap.text.length > 10)
+      (showDialog(
+        context: context,
+        builder: (BuildContext) {
+          return AlertDialog(
+            title: Text('Thong bao'),
+            content: Text('Sai so dt'),
+            actions: <Widget>[
+              new FlatButton(
+                  onPressed: () async {
+                   await Navigator.pop(context);
+                  },
+                  child: Text('OK'))
+            ],
+          );
+        },
+      ));
+    if(_txtMat_Khau.text.length<9)
+      (
+      showDialog(context: context,
+      builder: (BuildContext){
+        return AlertDialog(
+          title: Text('Thong bao'),
+          content: Text('Mat khau khong chinh xac'),
+          actions: <Widget>[
+            FlatButton(onPressed: (){Navigator.pop(context);}, child: Text('OK'))
+          ],
+        );
+      }
+      )
+      );
   }
 }
