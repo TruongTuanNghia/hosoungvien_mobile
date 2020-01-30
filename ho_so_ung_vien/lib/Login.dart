@@ -14,6 +14,8 @@ class LoginAppState extends State<LoginApp> {
   // TODO: implement widget
   void _Dang_Nhap() {}
   bool _iconshow = true;
+  var _sai_TDN='So dien thoai khong chinh xac';
+  var _sai_MK='Mat khau khong dung';
 
   Widget build(BuildContext context) {
     void _hien_thi_pass() {
@@ -41,6 +43,7 @@ class LoginAppState extends State<LoginApp> {
     final _txt_Ten_Dang_Nhap = new TextField(
       decoration: InputDecoration(
           hintText: 'Nhập số điện thoạii',
+          errorText: _sai_TDN,
           hintStyle: TextStyle(fontSize: 20),
           prefixIcon: Icon(Icons.phone),
           border: InputBorder.none),
@@ -50,6 +53,7 @@ class LoginAppState extends State<LoginApp> {
     final _txt_Ten_Mat_Khau = new TextField(
       decoration: InputDecoration(
           hintText: 'Nhập mật khẩu',
+          errorText: _sai_MK,
           hintStyle: TextStyle(fontSize: 20),
           prefixIcon: Icon(Icons.dialpad),
           border: InputBorder.none,
