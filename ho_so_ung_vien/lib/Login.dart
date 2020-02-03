@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ho_so_ung_vien/Dang_Ky.dart';
 
 class LoginApp extends StatefulWidget {
   @override
@@ -81,13 +82,9 @@ class LoginAppState extends State<LoginApp> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Đăng nhập',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 22)
-        ),
-        centerTitle: true
-      ),
+          title: Text('Đăng nhập',
+              textAlign: TextAlign.center, style: TextStyle(fontSize: 22)),
+          centerTitle: true),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -145,7 +142,9 @@ class LoginAppState extends State<LoginApp> {
                       child: Text(
                     " Đăng ký",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ))
+                  ),
+                    onTap:()=> _SDang_Ky() ,
+                  )
                 ],
               ),
             )
@@ -166,26 +165,33 @@ class LoginAppState extends State<LoginApp> {
             actions: <Widget>[
               new FlatButton(
                   onPressed: () async {
-                   await Navigator.pop(context);
+                    await Navigator.pop(context);
                   },
                   child: Text('OK'))
             ],
           );
         },
       ));
-    if(_txtMat_Khau.text.length<9)
-      (
-      showDialog(context: context,
-      builder: (BuildContext){
-        return AlertDialog(
-          title: Text('Thong bao'),
-          content: Text('Mat khau khong chinh xac'),
-          actions: <Widget>[
-            FlatButton(onPressed: (){Navigator.pop(context);}, child: Text('OK'))
-          ],
-        );
-      }
-      )
+    if (_txtMat_Khau.text.length < 8)
+      (showDialog(
+          context: context,
+          builder: (BuildContext) {
+            return AlertDialog(
+              title: Text('Thong bao'),
+              content: Text('Mat khau khong chinh xac'),
+              actions: <Widget>[
+                FlatButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text('OK'))
+              ],
+            );
+          })
       );
+
+  }
+  void _SDang_Ky(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Dang_Ky()));
   }
 }
