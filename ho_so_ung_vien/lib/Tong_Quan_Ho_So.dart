@@ -90,12 +90,20 @@ class Ho_So_State extends State<Ho_So>{
                 children: <Widget>[
                   Column(
                     children: <Widget>[
-                      _kinh_Nghiem
+                      GestureDetector(
+                        child: _kinh_Nghiem,
+                      )
+
+
+
                     ],
                   ),
                   Column(
                     children:<Widget>[
-                      _luong
+                      GestureDetector(
+                         child: _luong
+                      )
+
                     ]
                   )
                 ],
@@ -108,12 +116,18 @@ class Ho_So_State extends State<Ho_So>{
                 children: <Widget>[
                   Column(
                     children: <Widget>[
-                      _truong_hoc
+                      GestureDetector(
+                        child: _truong_hoc,
+                      )
+
                     ],
                   ),
                   Column(
                       children:<Widget>[
-                        _chung_chi
+                        GestureDetector(
+                          child: _chung_chi,
+                        )
+
                       ]
                   )
                 ],
