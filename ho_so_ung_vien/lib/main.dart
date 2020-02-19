@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ho_so_ung_vien/Dang_Ky.dart';
+import 'package:ho_so_ung_vien/Get_All_Login_Screen.dart';
 import 'package:ho_so_ung_vien/Login.dart';
 import 'package:ho_so_ung_vien/Tong_Quan_Ho_So.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget{
     // TODO: implement build
     return MaterialApp(
       title: 'myapp',
-      home: Ho_So(),
+      home: Get_All_Login_Screen(),
     );
   }
 }
