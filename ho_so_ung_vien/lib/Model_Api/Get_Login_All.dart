@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 //import 'package:sky_engine/_http/http.dart' as http;
 import 'dart:async';
 
-import 'Url_Api.dart';
+import '../Url_Api.dart';
 
 class Get_All_Login
 {
