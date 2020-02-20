@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ho_so_ung_vien/Login.dart';
+import 'package:ho_so_ung_vien/Login_Screen.dart';
 
 class Dang_Ky extends StatefulWidget{
   @override
