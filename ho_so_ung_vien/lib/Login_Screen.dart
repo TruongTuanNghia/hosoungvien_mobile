@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ho_so_ung_vien/Dang_Ky.dart';
+import 'Model_Api/DoLogin.dart';
+import 'package:http/http.dart' as http;
 
 class LoginApp extends StatefulWidget {
   @override
@@ -148,12 +150,19 @@ class LoginAppState extends State<LoginApp> {
                 ],
               ),
             )
+
           ],
         ),
       ),
     );
   }
-
+ void Login_Api_para() async{
+    Map<String, dynamic> para=Map<String,dynamic>();
+    para["usname"]=_txtTen_Dang_Nhap.value;
+    para["upass"]=_txtMat_Khau.text;
+    await Login_Api(http.Client(),para);
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Dang_Ky()));
+  }
   void _Dang_Nhap() {
     if (_txtTen_Dang_Nhap.text.length < 9 || _txtTen_Dang_Nhap.text.length > 10)
       (showDialog(
@@ -172,26 +181,33 @@ class LoginAppState extends State<LoginApp> {
           );
         },
       ));
-    if (_txtMat_Khau.text.length < 8)
-      (showDialog(
-          context: context,
-          builder: (BuildContext) {
-            return AlertDialog(
-              title: Text('Thong bao'),
-              content: Text('Mat khau khong chinh xac'),
-              actions: <Widget>[
-                FlatButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text('OK'))
-              ],
-            );
-          })
-      );
+    else {
+      if (_txtMat_Khau.text.length < 8)
+        (showDialog(
+            context: context,
+            builder: (BuildContext) {
+              return AlertDialog(
+                title: Text('Thong bao'),
+                content: Text('Mat khau khong chinh xac'),
+                actions: <Widget>[
+                  FlatButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text('OK'))
+                ],
+              );
+            })
+        );
+      else{
 
+        Login_Api_para();
+      }
+    }
   }
   void _SDang_Ky(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>Dang_Ky()));
   }
+
+
 }

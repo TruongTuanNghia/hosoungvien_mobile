@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'Model_Api/Get_Login_All.dart';
 
+
 class ListLogin extends StatelessWidget {
   final List<Get_All_Login> logins;
 
@@ -48,7 +49,7 @@ class _Get_All_Login_ScreenState extends State<Get_All_Login_Screen> {
         centerTitle: true,
       ),
       body: FutureBuilder(
-          future: Get_All_Login_Api(http.Client()),
+          future:Get_All_Login_Api(http.Client()),
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               //print(snapshot.error);
