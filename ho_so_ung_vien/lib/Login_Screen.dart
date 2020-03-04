@@ -158,7 +158,7 @@ class LoginAppState extends State<LoginApp> {
   }
  void Login_Api_para() async{
     Map<String, dynamic> para=Map<String,dynamic>();
-    para["usname"]=_txtTen_Dang_Nhap.value;
+    para["usname"]=_txtTen_Dang_Nhap.text;
     para["upass"]=_txtMat_Khau.text;
     await Login_Api(http.Client(),para);
     Navigator.push(context, MaterialPageRoute(builder: (context)=>Dang_Ky()));
