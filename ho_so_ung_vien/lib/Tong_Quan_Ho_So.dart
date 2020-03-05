@@ -51,43 +51,65 @@ class Ho_So_State extends State<Ho_So>{
       height: 170,
       width: 180,
       color: Colors.black12,
-      child: Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Text('Đã từng làm ',style: TextStyle(fontWeight: FontWeight.bold))
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Text('Tại ',style: TextStyle(fontWeight: FontWeight.bold))
-            ],
-          )
-        ],
-      ),
+      padding: EdgeInsets.only(left: 20,right: 20,top: 20),
+      child:
+        Column(
+          children: <Widget>[
+               Text('Đã từng làm:',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+                    Text('dfdfdfsghfgdfsfdfgdgf',style: TextStyle(fontSize: 18)),
+             Text('Tại ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+                Text('dfdf ',style: TextStyle(fontSize: 18))
+          ],
+        ),
+
     );
 
     final Container _luong= new Container(
       height: 170,
       width: 180,
       color: Colors.black12,
+      padding: EdgeInsets.only(left: 20,right: 20,top: 20),
+      child:
+      Column(
+        children: <Widget>[
+          Text('Mức lương hiện tại:',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf',style: TextStyle(fontSize: 18)),
 
+        ],
+      ),
     );
 
     final Container _truong_hoc= new Container(
       height: 170,
       width: 180,
       color: Colors.black12,
+      padding: EdgeInsets.only(left: 20,right: 20,top: 20),
+      child:
+      Column(
+        children: <Widget>[
+          Text('Đã từng học tại:',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf',style: TextStyle(fontSize: 18)),
 
+        ],
+      ),
     );
 
     final Container _chung_chi= new Container(
       height: 170,
       width: 180,
       color: Colors.black12,
+      padding: EdgeInsets.only(left: 20,right: 20,top: 20),
+      child:
+      Column(
+        children: <Widget>[
+          Text('Chứng chỉ/CV:',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf',style: TextStyle(fontSize: 18)),
 
+        ],
+      ),
     );
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
         elevation: 0.0,
@@ -114,7 +136,6 @@ class Ho_So_State extends State<Ho_So>{
                       GestureDetector(
                          child: _luong
                       )
-
                     ]
                   )
                 ],
@@ -130,7 +151,6 @@ class Ho_So_State extends State<Ho_So>{
                       GestureDetector(
                         child: _truong_hoc,
                       )
-
                     ],
                   ),
                   Column(
