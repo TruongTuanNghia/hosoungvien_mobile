@@ -83,6 +83,7 @@ class LoginAppState extends State<LoginApp> {
 
     // TODO: implement build
     return Scaffold(
+     resizeToAvoidBottomPadding: false,
       appBar: AppBar(
           title: Text('Đăng nhập',
               textAlign: TextAlign.center, style: TextStyle(fontSize: 22)),
@@ -158,8 +159,8 @@ class LoginAppState extends State<LoginApp> {
   }
  void Login_Api_para() async{
     Map<String, dynamic> para=Map<String,dynamic>();
-    para["usname"]=_txtTen_Dang_Nhap.text;
-    para["upass"]=_txtMat_Khau.text;
+    para["uname"]=_txtTen_Dang_Nhap.text.trim();
+    para["upass"]=_txtMat_Khau.text.trim();
     await Login_Api(http.Client(),para);
     Navigator.push(context, MaterialPageRoute(builder: (context)=>Dang_Ky()));
   }

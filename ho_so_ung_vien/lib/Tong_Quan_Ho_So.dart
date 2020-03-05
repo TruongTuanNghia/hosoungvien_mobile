@@ -19,14 +19,15 @@ class Ho_So_State extends State<Ho_So>{
       color: Colors.blueAccent,
       child: Column(
         children: <Widget>[
-          Image.asset('images/daidien.jpg',height: 50.0,width: 50.0,),
+          //Image.asset('images/daidien.jpg',height: 50.0,width: 50.0),
+          Image.network('http://thuthuat123.com/uploads/2018/01/27/anh-dai-dien-dep-nhat-1_091630.gif',height: 70.0,width: 90.0),
           Container(
             decoration: BoxDecoration(
               border: Border.all(width: 1.0),
               borderRadius: BorderRadius.all(Radius.circular(15.0)),
               color: Colors.black12,
             ),
-            margin: EdgeInsets.only(top: 50),
+            margin: EdgeInsets.only(top: 40),
             padding: EdgeInsets.only(top: 10),
             height: 70.0,
             width: 300.1,
@@ -50,7 +51,20 @@ class Ho_So_State extends State<Ho_So>{
       height: 170,
       width: 180,
       color: Colors.black12,
-
+      child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Text('Đã từng làm ',style: TextStyle(fontWeight: FontWeight.bold))
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Text('Tại ',style: TextStyle(fontWeight: FontWeight.bold))
+            ],
+          )
+        ],
+      ),
     );
 
     final Container _luong= new Container(
@@ -93,9 +107,6 @@ class Ho_So_State extends State<Ho_So>{
                       GestureDetector(
                         child: _kinh_Nghiem,
                       )
-
-
-
                     ],
                   ),
                   Column(
