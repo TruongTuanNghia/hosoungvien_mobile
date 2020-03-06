@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget{
     // TODO: implement build
     return MaterialApp(
       title: 'myapp',
-      home: Ho_So(),
+      home: Dang_Ky(),
     );
   }
 }

@@ -115,11 +115,11 @@ class Ho_So_State extends State<Ho_So> {
       height: 150,
       color: Colors.black12,
       margin: EdgeInsets.only(top: 20,left: 15,right: 15),
-      child: ListView(
+      child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          Row(
-
+       // itemCount: ,
+        itemBuilder: (context,index) {
+         return Row(
             children: <Widget>[
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -134,50 +134,69 @@ class Ho_So_State extends State<Ho_So> {
                       child: Text('Java')),
                 ],
               ),
-              Column(
-                children: <Widget>[
-                  Icon(
-                    Icons.adjust,
-                    color: Colors.blueAccent,
-                    size: 50,
-                  ),
-                  Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text('C#')),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Icon(
-                    Icons.adjust,
-                    color: Colors.blueAccent,
-                    size: 50,
-                  ),
-                  Text('HTML'),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Icon(
-                    Icons.adjust,
-                    color: Colors.blueAccent,
-                    size: 50,
-                  ),
-                  Text('CSS'),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Icon(
-                    Icons.adjust,
-                    color: Colors.blueAccent,
-                    size: 50,
-                  ),
-                  Text('FLUTTER'),
-                ],
-              ),
             ],
-          )
+          );
+
+        }
+
+    )
+    );
+
+    final Container _luong_mong_muon = new Container(
+      height: 170,
+      width: 180,
+      color: Colors.black12,
+      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Column(
+        children: <Widget>[
+            Text('Mức lương mông muốn:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf', style: TextStyle(fontSize: 18)),
+          Text('Tại ',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdf ', style: TextStyle(fontSize: 18))
+        ],
+      ),
+    );
+
+    final Container _Tinh_chat_cong_viec = new Container(
+      height: 170,
+      width: 180,
+      color: Colors.black12,
+      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Column(
+        children: <Widget>[
+          Text('Tính chất công việc:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf', style: TextStyle(fontSize: 18)),
+        ],
+      ),
+    );
+
+    final Container _Chuc_vu_mong_muon = new Container(
+      height: 170,
+      width: 180,
+      color: Colors.black12,
+      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Column(
+        children: <Widget>[
+          Text('Chức vụ mong muon:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf', style: TextStyle(fontSize: 18)),
+        ],
+      ),
+    );
+
+    final Container _trang_thai_tim_viec = new Container(
+      height: 170,
+      width: 180,
+      color: Colors.black12,
+      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Column(
+        children: <Widget>[
+          Text('Chứng chỉ/CV:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf', style: TextStyle(fontSize: 18)),
         ],
       ),
     );

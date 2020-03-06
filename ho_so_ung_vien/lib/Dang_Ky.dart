@@ -28,7 +28,6 @@ class Dang_Ky_State extends State<Dang_Ky>{
           prefixIcon: Icon(Icons.add_call),
           hasFloatingPlaceholder: false,
           contentPadding: EdgeInsets.only(bottom: 12),
-
         ),
       keyboardType: TextInputType.number,
       style: TextStyle(fontSize: 25),
@@ -77,6 +76,7 @@ controller: _txtTen_Dang_Ky_Contr,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))));
     // TODO: implement build
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text('Dang ky',style: TextStyle(fontSize: 24)),
         centerTitle: true,
