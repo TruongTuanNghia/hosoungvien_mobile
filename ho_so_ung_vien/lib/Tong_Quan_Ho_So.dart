@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
-class Ho_So extends StatefulWidget{
+class Ho_So extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -10,7 +9,7 @@ class Ho_So extends StatefulWidget{
   }
 }
 
-class Ho_So_State extends State<Ho_So>{
+class Ho_So_State extends State<Ho_So> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -20,7 +19,10 @@ class Ho_So_State extends State<Ho_So>{
       child: Column(
         children: <Widget>[
           //Image.asset('images/daidien.jpg',height: 50.0,width: 50.0),
-          Image.network('http://thuthuat123.com/uploads/2018/01/27/anh-dai-dien-dep-nhat-1_091630.gif',height: 70.0,width: 90.0),
+          Image.network(
+              'http://thuthuat123.com/uploads/2018/01/27/anh-dai-dien-dep-nhat-1_091630.gif',
+              height: 70.0,
+              width: 90.0),
           Container(
             decoration: BoxDecoration(
               border: Border.all(width: 1.0),
@@ -33,12 +35,15 @@ class Ho_So_State extends State<Ho_So>{
             width: 300.1,
             child: Column(
               children: <Widget>[
-                Text('Truong Tuan Nghia',style: TextStyle(fontSize: 20,color: Colors.white)),
+                Text('Truong Tuan Nghia',
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('Nam'+', ',style: TextStyle(fontSize: 20,color: Colors.white)),
-                    Text('20 tuoi',style: TextStyle(fontSize: 20,color: Colors.white))
+                    Text('Nam' + ', ',
+                        style: TextStyle(fontSize: 20, color: Colors.white)),
+                    Text('20 tuoi',
+                        style: TextStyle(fontSize: 20, color: Colors.white))
                   ],
                 )
               ],
@@ -47,75 +52,143 @@ class Ho_So_State extends State<Ho_So>{
         ],
       ),
     );
-    final Container _kinh_Nghiem= new Container(
+    final Container _kinh_Nghiem = new Container(
       height: 170,
       width: 180,
       color: Colors.black12,
-      padding: EdgeInsets.only(left: 20,right: 20,top: 20),
-      child:
-        Column(
-          children: <Widget>[
-               Text('Đã từng làm:',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-                    Text('dfdfdfsghfgdfsfdfgdgf',style: TextStyle(fontSize: 18)),
-             Text('Tại ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-                Text('dfdf ',style: TextStyle(fontSize: 18))
-          ],
-        ),
-
-    );
-
-    final Container _luong= new Container(
-      height: 170,
-      width: 180,
-      color: Colors.black12,
-      padding: EdgeInsets.only(left: 20,right: 20,top: 20),
-      child:
-      Column(
+      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Column(
         children: <Widget>[
-          Text('Mức lương hiện tại:',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-          Text('dfdfdfsghfgdfsfdfgdgf',style: TextStyle(fontSize: 18)),
-
+          Text('Đã từng làm:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf', style: TextStyle(fontSize: 18)),
+          Text('Tại ',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdf ', style: TextStyle(fontSize: 18))
         ],
       ),
     );
 
-    final Container _truong_hoc= new Container(
+    final Container _luong = new Container(
       height: 170,
       width: 180,
       color: Colors.black12,
-      padding: EdgeInsets.only(left: 20,right: 20,top: 20),
-      child:
-      Column(
+      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Column(
         children: <Widget>[
-          Text('Đã từng học tại:',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-          Text('dfdfdfsghfgdfsfdfgdgf',style: TextStyle(fontSize: 18)),
-
+          Text('Mức lương hiện tại:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf', style: TextStyle(fontSize: 18)),
         ],
       ),
     );
 
-    final Container _chung_chi= new Container(
+    final Container _truong_hoc = new Container(
       height: 170,
       width: 180,
       color: Colors.black12,
-      padding: EdgeInsets.only(left: 20,right: 20,top: 20),
-      child:
-      Column(
+      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Column(
         children: <Widget>[
-          Text('Chứng chỉ/CV:',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-          Text('dfdfdfsghfgdfsfdfgdgf',style: TextStyle(fontSize: 18)),
+          Text('Đã từng học tại:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf', style: TextStyle(fontSize: 18)),
+        ],
+      ),
+    );
 
+    final Container _chung_chi = new Container(
+      height: 170,
+      width: 180,
+      color: Colors.black12,
+      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Column(
+        children: <Widget>[
+          Text('Chứng chỉ/CV:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          Text('dfdfdfsghfgdfsfdfgdgf', style: TextStyle(fontSize: 18)),
+        ],
+      ),
+    );
+
+    final Container _ky_nang_chuyen_mon= new Container(
+      height: 150,
+      color: Colors.black12,
+      margin: EdgeInsets.only(top: 20,left: 15,right: 15),
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          Row(
+
+            children: <Widget>[
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.adjust,
+                    color: Colors.blueAccent,
+                    size: 50,
+                  ),
+                  Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text('Java')),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(
+                    Icons.adjust,
+                    color: Colors.blueAccent,
+                    size: 50,
+                  ),
+                  Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text('C#')),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(
+                    Icons.adjust,
+                    color: Colors.blueAccent,
+                    size: 50,
+                  ),
+                  Text('HTML'),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(
+                    Icons.adjust,
+                    color: Colors.blueAccent,
+                    size: 50,
+                  ),
+                  Text('CSS'),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(
+                    Icons.adjust,
+                    color: Colors.blueAccent,
+                    size: 50,
+                  ),
+                  Text('FLUTTER'),
+                ],
+              ),
+            ],
+          )
         ],
       ),
     );
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
-      appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
-        elevation: 0.0,
-      ),
+        resizeToAvoidBottomPadding: false,
+        appBar: AppBar(
+          backgroundColor: Colors.blueAccent,
+          elevation: 0.0,
+        ),
         backgroundColor: Colors.white,
-      body: ListView(
+        body: ListView(
           scrollDirection: Axis.vertical,
           children: <Widget>[
             _tieu_De,
@@ -131,18 +204,12 @@ class Ho_So_State extends State<Ho_So>{
                       )
                     ],
                   ),
-                  Column(
-                    children:<Widget>[
-                      GestureDetector(
-                         child: _luong
-                      )
-                    ]
-                  )
+                  Column(children: <Widget>[GestureDetector(child: _luong)])
                 ],
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20,bottom: 10),
+              margin: EdgeInsets.only(top: 20, bottom: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -153,23 +220,16 @@ class Ho_So_State extends State<Ho_So>{
                       )
                     ],
                   ),
-                  Column(
-                      children:<Widget>[
-                        GestureDetector(
-                          child: _chung_chi,
-                        )
-
-                      ]
-                  )
+                  Column(children: <Widget>[
+                    GestureDetector(
+                      child: _chung_chi,
+                    )
+                  ])
                 ],
               ),
             ),
-
-
-
+            _ky_nang_chuyen_mon
           ],
-
-    )
-    );
+        ));
   }
 }
