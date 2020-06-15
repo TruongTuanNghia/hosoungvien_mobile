@@ -38,9 +38,10 @@ class Data{
   Future<DoLogin> Login_Api(
       http.Client client, Map<String, dynamic> para) async {
     final response = await client.post(Url_DoLogin,
-        headers: {
-          HttpHeaders.contentTypeHeader: 'application/json',
-        },body: para);
+        //headers: {
+       //   HttpHeaders.contentTypeHeader: 'application/json',
+       // },
+        body: para);
     if (response.statusCode == 200) {
      final responseBody = await json.decode(response.body);
      return DoLogin.fromJson(responseBody);

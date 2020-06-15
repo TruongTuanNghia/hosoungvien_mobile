@@ -71,6 +71,7 @@ class LoginAppState extends State<LoginApp> {
       obscureText: _iconshow,
       controller: _txtMat_Khau,
     );
+
     final _btn_Dang_Nhap = new RaisedButton(
         onPressed: _Dang_Nhap,
         child: Text(
@@ -192,7 +193,7 @@ class LoginAppState extends State<LoginApp> {
                 content: Text('Mat khau khong chinh xac'),
                 actions: <Widget>[
                   FlatButton(
-                      onPressed: () {
+                      onPressed:() {
                         Navigator.pop(context);
                       },
                       child: Text('OK'))
@@ -201,7 +202,6 @@ class LoginAppState extends State<LoginApp> {
             })
         );
       else{
-
         Login_Api_para();
       }
     }
@@ -209,6 +209,4 @@ class LoginAppState extends State<LoginApp> {
   void _SDang_Ky(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>Dang_Ky()));
   }
-
-
 }
